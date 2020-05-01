@@ -1,16 +1,28 @@
-body {
-  height: 100vh;
-  background-color: #40bad5;
-}
 h1 {
   color: white;
   font-size: 1.5em;
 }
+.main-container {
+  height: 100vh;
+  background-color: #40bad5;
+}
+
 .container {
   width: 400px;
+  margin-bottom: 100px;
 }
 .card {
   color: white;
   text-align: center;
-  border-radius: 10px;
+}
+
+.uk-button-default {
+  border: #f0506e 1px solid;
+  color: #f0506e;
+}
+
+.uk-button-default:hover,
+.uk-button-default:focus {
+  border: #fa7d94 1px solid;
+  color: #fa7d94;
 }
