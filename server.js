@@ -1,6 +1,7 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const apiRouter = require("./controller/api")
+const htmlRouter = require("./controller/routes")
 
 
 const PORT = process.env.PORT || 3000
@@ -14,12 +15,13 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/secretDB", {
 });
 
 
-app.use(express.static("public", { "extensions": "html" }))
+app.use(express.static("public"))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 
 app.use(apiRouter);
+app.use(htmlRouter);
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`)
