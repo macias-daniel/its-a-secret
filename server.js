@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 3000
 const app = express();
 
 mongoose.set("debug", true)
+
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/secretDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -17,6 +18,8 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 app.use(apiRouter);
+
+
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`)

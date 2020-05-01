@@ -7,6 +7,10 @@ const SecretSchema = new Schema({
     type: String,
     require: true
   },
+  catergory: {
+    type: String,
+    require: true
+  },
   dateCreated: {
     type: Date,
     default: Date.now()
