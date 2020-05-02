@@ -32,8 +32,8 @@ body {
   margin-bottom: 10px;
 }
 
-.btn:hover,
-.btn:focus {
+.post:hover,
+.post:focus {
   border: #fa7d94 1px solid;
   color: #fa7d94;
   background-color: transparent;
