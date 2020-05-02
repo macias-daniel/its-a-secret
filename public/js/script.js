@@ -1,5 +1,6 @@
 const secretTextBox = $("#secretText")
 const categorySelect = $("#categorySelect")
+const searchCategorySelect = $("#searchCategorySelect")
 const postSecretButton = $(".post")
 const switchViewButton = $(".switch-view")
 const searchSecretButton = $(".search-secret")
@@ -12,7 +13,6 @@ let isMainView = true
 let isSearchDataView = false
 
 $(() => {
-
   //Post secret button
   postSecretButton.on("click", (event) => {
     event.preventDefault()
@@ -57,8 +57,16 @@ $(() => {
 
   //Search for secret button
   searchSecretButton.on("click", event => {
+    const category = searchCategorySelect.val()
     event.preventDefault()
     toggleSecretDisplay()
+
+    if (category === "notValid") {
+      return console.log("Invalid search option")
+    }
+
+    console.log(category)
+
   })
 
   //Exit secret data view button
@@ -69,8 +77,7 @@ $(() => {
 });
 
 
-
-
+//========================================== Function Definitions ==========================================
 function toggleSpinner() {
   spinner.toggle()
 }
@@ -81,8 +88,6 @@ function toggleSecretDisplay() {
   viewSecretView.toggle()
 
 }
-
-
 function toggleView() {
   postSecretView.toggle()
   searchSecretView.toggle()

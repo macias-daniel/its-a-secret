@@ -1,24 +1,8 @@
+/* Global Styles */
 html,
 body {
   height: 100%;
   background-color: #40bad5;
-}
-
-.secret {
-  color: #c70039;
-}
-.searchText {
-  text-align: center;
-  color: white;
-  font-size: 2em;
-}
-.headingText {
-  color: white;
-  font-size: 2em;
-}
-.heading {
-  text-align: center;
-  margin-bottom: 40px;
 }
 
 .main {
@@ -26,6 +10,17 @@ body {
   width: 100%;
   padding: 10px;
 }
+
+.secret {
+  color: #c70039;
+}
+
+.headingText {
+  color: white;
+  font-size: 2em;
+}
+
+/* Post Secret Styles */
 
 .new-post-container {
   position: absolute;
@@ -40,6 +35,25 @@ body {
   margin-bottom: 10px;
 }
 
+.heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.searchText {
+  text-align: center;
+  color: white;
+  font-size: 2em;
+}
+
+.post:hover,
+.post:focus {
+  border: #fa7d94 1px solid;
+  color: #fa7d94;
+  background-color: transparent;
+}
+
+/* Search Secret Styles */
 .search-secret-container {
   display: none;
   position: absolute;
@@ -54,6 +68,7 @@ body {
   margin-bottom: 10px;
 }
 
+/* View Secret Styles */
 .view-secret-container {
   display: none;
   background-color: #fff;
@@ -81,13 +96,8 @@ body {
 .spinner {
   margin: 50px;
 }
-.post:hover,
-.post:focus {
-  border: #fa7d94 1px solid;
-  color: #fa7d94;
-  background-color: transparent;
-}
 
+/* Media Querys */
 @media screen and (max-width: 576px) {
   .new-post-container {
     left: 50%;
@@ -96,6 +106,12 @@ body {
   }
 
   .search-secret-container {
+    left: 50%;
+    margin-left: -150px;
+    width: 300px;
+  }
+
+  .view-secret-container {
     left: 50%;
     margin-left: -150px;
     width: 300px;
