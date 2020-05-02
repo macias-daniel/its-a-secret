@@ -3,7 +3,7 @@ const categorySelect = $("#categorySelect")
 const postSecretButton = $(".post")
 const switchViewButton = $(".switch-view")
 const postSecretView = $(".new-post-container")
-const viewSecretView = $(".view-secret-container")
+const viewSecretView = $(".search-secret-container")
 let isMainView = true
 
 $(() => {

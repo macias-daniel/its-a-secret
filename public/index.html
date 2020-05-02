@@ -32,10 +32,12 @@
       </nav>
 
       <!-- New Post Container -->
-      <div class="new-post-container center">
+      <div class="new-post-container">
         <!-- Heading -->
         <div class="heading">
-          <h1 class="headingText">Whats Your Secret?</h1>
+          <h1 class="headingText">
+            Whats Your <span class="secret">Secret</span>?
+          </h1>
         </div>
         <form>
           <!-- Text Area -->
@@ -67,7 +69,36 @@
       </div>
 
       <!-- View Secret Container -->
-      <div class="view-secret-container"></div>
+      <div class="search-secret-container">
+        <div class="container">
+          <!-- Search by category title -->
+          <div class="row">
+            <div class="col heading">
+              <h3 class="searchText">
+                Search for a <span class="secret">Secret</span>...
+              </h3>
+            </div>
+          </div>
+          <!-- Search by category form -->
+          <div class="row">
+            <div class="col-sm-6 mb-3">
+              <form>
+                <select class="form-control" id="categorySelect">
+                  <option value="notValid">What category?</option>
+                  <option value="personal">Personal</option>
+                  <option value="private">Private</option>
+                  <option value="random">Randomize</option>
+                </select>
+              </form>
+            </div>
+            <div class="col-sm-6 mb-4">
+              <button type="button" class="btn btn-outline-danger btn-block">
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!--  Jquery JS  -->
