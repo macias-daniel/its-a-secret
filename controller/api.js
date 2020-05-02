@@ -2,6 +2,7 @@ const express = require("express");
 const db = require("../models");
 const router = express.Router();
 
+
 //Get all secrets
 router.get("/api/secret", (req, res) => {
   db.Secret.find({}).then(secrets => {
