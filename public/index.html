@@ -17,6 +17,7 @@
 
   <body>
     <div class="main">
+      <!-- Toggle button -->
       <nav>
         <ul class="nav justify-content-center">
           <li class="nav-item">
@@ -29,12 +30,15 @@
           </li>
         </ul>
       </nav>
-      <div class="new-post-container">
+
+      <!-- New Post Container -->
+      <div class="new-post-container center">
+        <!-- Heading -->
         <div class="heading">
           <h1 class="headingText">Whats Your Secret?</h1>
         </div>
-
         <form>
+          <!-- Text Area -->
           <div class="mt-3 mb-3">
             <textarea
               class="form-control"
@@ -43,6 +47,7 @@
             ></textarea>
           </div>
 
+          <!-- Category Select -->
           <div class="mt-3 mb-3">
             <select class="form-control" id="categorySelect">
               <option value="notValid">Select your secret type</option>
@@ -52,6 +57,7 @@
             </select>
           </div>
 
+          <!-- Post Button -->
           <div class="mt-3 mb-3">
             <button class="post btn btn-outline-danger btn-lg btn-block">
               Post
@@ -59,8 +65,10 @@
           </div>
         </form>
       </div>
+
+      <!-- View Secret Container -->
+      <div class="view-secret-container"></div>
     </div>
-    <div class="secretView"></div>
 
     <!--  Jquery JS  -->
     <script

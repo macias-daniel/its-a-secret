@@ -2,6 +2,8 @@ const secretTextBox = $("#secretText")
 const categorySelect = $("#categorySelect")
 const postSecretButton = $(".post")
 const switchViewButton = $(".switch-view")
+const postSecretView = $(".new-post-container")
+const viewSecretView = $(".view-secret-container")
 let isMainView = true
 
 $(() => {
@@ -50,7 +52,8 @@ $(() => {
 });
 
 function switchView() {
-  $(".new-post-container").toggle()
+  postSecretView.toggle()
+  viewSecretView.toggle()
 }
 
 function postNewSecret(newSecret) {
