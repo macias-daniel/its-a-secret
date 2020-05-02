@@ -26,6 +26,7 @@ body {
   width: 100%;
   padding: 10px;
 }
+
 .new-post-container {
   position: absolute;
 
@@ -54,6 +55,31 @@ body {
 }
 
 .view-secret-container {
+  display: none;
+  background-color: #fff;
+
+  border-radius: 5px;
+  padding: 10px;
+  position: absolute;
+
+  left: 50%;
+  margin-left: -250px;
+
+  top: 35%;
+  transform: translateY(-20%);
+
+  width: 500px;
+  margin-bottom: 10px;
+}
+
+.exit-icon {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.spinner {
+  margin: 50px;
 }
 .post:hover,
 .post:focus {

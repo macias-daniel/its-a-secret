@@ -2,9 +2,14 @@ const secretTextBox = $("#secretText")
 const categorySelect = $("#categorySelect")
 const postSecretButton = $(".post")
 const switchViewButton = $(".switch-view")
+const searchSecretButton = $(".search-secret")
+const exitSecretButton = $(".exit-icon")
 const postSecretView = $(".new-post-container")
-const viewSecretView = $(".search-secret-container")
+const searchSecretView = $(".search-secret-container")
+const viewSecretView = $(".view-secret-container")
+const spinner = $(".spinner")
 let isMainView = true
+let isSearchDataView = false
 
 $(() => {
 
@@ -36,9 +41,9 @@ $(() => {
 
 
   //Switch view button
-  switchViewButton.on("click", (event => {
+  switchViewButton.on("click", event => {
     event.preventDefault()
-    switchView()
+    toggleView()
 
     if (isMainView === true) {
       switchViewButton.text("Post a Secret")
@@ -48,12 +53,39 @@ $(() => {
       isMainView = true
     }
 
-  }))
+  })
+
+  //Search for secret button
+  searchSecretButton.on("click", event => {
+    event.preventDefault()
+    toggleSecretDisplay()
+  })
+
+  //Exit secret data view button
+  exitSecretButton.on("click", event => {
+    event.preventDefault()
+    toggleSecretDisplay()
+  })
 });
 
-function switchView() {
-  postSecretView.toggle()
+
+
+
+function toggleSpinner() {
+  spinner.toggle()
+}
+
+function toggleSecretDisplay() {
+  switchViewButton.toggle()
+  searchSecretView.toggle()
   viewSecretView.toggle()
+
+}
+
+
+function toggleView() {
+  postSecretView.toggle()
+  searchSecretView.toggle()
 }
 
 function postNewSecret(newSecret) {
