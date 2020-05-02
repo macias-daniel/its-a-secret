@@ -5,11 +5,11 @@ const Schema = mongoose.Schema;
 const SecretSchema = new Schema({
   secretContent: {
     type: String,
-    require: true
+    required: true
   },
-  catergory: {
+  category: {
     type: String,
-    require: true
+    required: true
   },
   dateCreated: {
     type: Date,

@@ -9,15 +9,27 @@ mongoose.connect("mongodb://localhost/secretDB", {
 const secretSeed = [
   {
     secretContent: "Word",
-    category: "Private"
+    category: "private"
+  },
+  {
+    secretContent: "Word",
+    category: "private"
   },
   {
     secretContent: "MMKKK",
-    category: "Personal"
+    category: "personal"
+  },
+  {
+    secretContent: "MMKKK",
+    category: "personal"
   },
   {
     secretContent: "LOLLOL",
-    category: "Stuff"
+    category: "stuff"
+  },
+  {
+    secretContent: "LOLLOL",
+    category: "stuff"
   }
 ];
 
