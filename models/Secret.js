@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema;
 
 const SecretSchema = new Schema({
-  secretContent: {
+  content: {
     type: String,
     required: true
   },

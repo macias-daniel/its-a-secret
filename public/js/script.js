@@ -38,7 +38,7 @@ $(() => {
     }
 
     const newSecret = {
-      secretContent: secretText,
+      content: secretText,
       category: category
     }
 
@@ -131,7 +131,7 @@ function displayIndividualSecret(secret) {
 
   const secretDiv = $("<div class= 'secretContent'>")
   const timeSection = $(`<p>${dateString} ${time}</p>`)
-  const secretContent = $(`<p>${secret.secretContent}</p>`)
+  const secretContent = $(`<p>${secret.content}</p>`)
 
   secretDiv.append(timeSection, secretContent, $("<hr>"))
 
