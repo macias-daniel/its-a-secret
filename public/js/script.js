@@ -1,16 +1,28 @@
+//Content selctions
 const secretTextBox = $("#secretText")
 const categorySelect = $("#categorySelect")
 const searchCategorySelect = $("#searchCategorySelect")
+
+//Buttons
 const postSecretButton = $(".post")
 const switchViewButton = $(".switch-view")
 const searchSecretButton = $(".search-secret")
 const exitSecretButton = $(".exit-icon")
+
+//Containers
 const postSecretView = $(".new-post-container")
 const searchSecretView = $(".search-secret-container")
 const viewSecretView = $(".view-secret-container")
+
+//Individual Element selector
 const spinner = $(".spinner")
+const secretAppend = $(".secret-append")
+
+//Variable declaration
 let isMainView = true
 let isSearchDataView = false
+
+
 
 $(() => {
   //Post secret button
@@ -81,8 +93,6 @@ $(() => {
           displayIndividualSecret(secret)
         });
       }
-
-
     })
   })
 
@@ -90,6 +100,7 @@ $(() => {
   exitSecretButton.on("click", event => {
     event.preventDefault()
     //Display search section and hide serach data section
+    secretAppend.empty()
     toggleSecretDisplay()
   })
 });
@@ -115,7 +126,16 @@ function toggleView() {
 function displayIndividualSecret(secret) {
   const date = new Date(secret.dateCreated)
   const time = date.toLocaleTimeString()
-  console.log((date + "").slice(0, 15), time, secret.secretContent)
+  const dateString = (date + "").slice(3, 15)
+
+
+  const secretDiv = $("<div class= 'secretContent'>")
+  const timeSection = $(`<p>${dateString} ${time}</p>`)
+  const secretContent = $(`<p>${secret.secretContent}</p>`)
+
+  secretDiv.append(timeSection, secretContent, $("<hr>"))
+
+  secretAppend.append(secretDiv)
 }
 
 async function getSecrets(category) {
