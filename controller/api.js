@@ -18,14 +18,12 @@ router.get("/api/secret/random", (req, res) => {
   db.Secret.count({}).then(count => {
     const randomSecret = Math.floor(Math.random() * count)
     db.Secret.findOne().skip(randomSecret).then(secret => {
-      console.log(secret)
-      res.end()
+      res.json(secret)
     })
-    res.end()
+
   }).catch(err => {
     console.log(err)
     res.sendStatus(500)
-
   })
 })
 

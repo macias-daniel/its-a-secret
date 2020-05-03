@@ -94,6 +94,8 @@ body {
 }
 
 .spinner {
+  display: none;
+  text-align: center;
   margin: 50px;
 }
 

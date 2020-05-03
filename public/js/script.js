@@ -55,23 +55,31 @@ $(() => {
 
   })
 
-  //Search for secret button
+  //Search for Secret button
   searchSecretButton.on("click", event => {
-    const category = searchCategorySelect.val()
     event.preventDefault()
-    toggleSecretDisplay()
+
+    const category = searchCategorySelect.val()
 
     if (category === "notValid") {
       return console.log("Invalid search option")
     }
 
-    console.log(category)
+    console.log("reached")
+    //Hide ssearch section and show search data section
+    toggleSecretDisplay()
+    toggleSpinner()
 
+    //Get secret data
+    getSecrets(category).then(data => {
+      toggleSpinner()
+    })
   })
 
-  //Exit secret data view button
+  //Exit Secret View button
   exitSecretButton.on("click", event => {
     event.preventDefault()
+    //Display search section and hide serach data section
     toggleSecretDisplay()
   })
 });
@@ -93,7 +101,23 @@ function toggleView() {
   searchSecretView.toggle()
 }
 
-function postNewSecret(newSecret) {
+
+async function getSecrets(category) {
+  const getUrl = `/api/secret/${category}`
+
+  let secretData
+  try {
+    secretData = await fetch(getUrl)
+  } catch (err) {
+    console.log(err)
+  }
+
+  return secretData.json()
+}
+
+
+
+function postNewSecret(newSecret, cb) {
   try {
     fetch("/api/secret", {
       method: "POST",
@@ -102,7 +126,6 @@ function postNewSecret(newSecret) {
       },
       body: JSON.stringify(newSecret)
     })
-
   } catch (err) {
     console.log(err)
   }
