@@ -29,7 +29,7 @@ router.get("/api/secret/random", (req, res) => {
 
 //Get all secrets in a category
 router.get("/api/secret/:category", (req, res) => {
-  db.Secret.find({ category: req.params.category }).then(secrets => {
+  db.Secret.find({ category: req.params.category }).sort('-_id').then(secrets => {
     res.json(secrets)
   }).catch(err => {
     console.log(err)
