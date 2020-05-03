@@ -65,14 +65,24 @@ $(() => {
       return console.log("Invalid search option")
     }
 
-    console.log("reached")
     //Hide ssearch section and show search data section
     toggleSecretDisplay()
     toggleSpinner()
 
     //Get secret data
-    getSecrets(category).then(data => {
+    getSecrets(category).then(secrets => {
       toggleSpinner()
+      //searching for random only gives 1 secret so no array mustt be calle on its own
+      if (category === "random") {
+        displayIndividualSecret(secrets)
+        return
+      } else {
+        secrets.forEach(secret => {
+          displayIndividualSecret(secret)
+        });
+      }
+
+
     })
   })
 
@@ -101,6 +111,12 @@ function toggleView() {
   searchSecretView.toggle()
 }
 
+
+function displayIndividualSecret(secret) {
+  const date = new Date(secret.dateCreated)
+  const time = date.toLocaleTimeString()
+  console.log((date + "").slice(0, 15), time, secret.secretContent)
+}
 
 async function getSecrets(category) {
   const getUrl = `/api/secret/${category}`
