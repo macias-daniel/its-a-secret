@@ -1,3 +1,5 @@
 module.exports = {
-  Secret: require("./Secret")
+  Secret: require("./Secret"),
+
+  User: require("./User")
 };

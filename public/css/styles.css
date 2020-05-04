@@ -99,6 +99,12 @@ body {
   margin: 50px;
 }
 
+.secret-append {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
 /* Media Querys */
 @media screen and (max-width: 576px) {
   .new-post-container {
