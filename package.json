@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/macias-daniel/its-a-secret#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "mongoose": "^5.9.11",
     "bcryptjs": "2.4.3",
     "dotenv": "^8.2.0",
